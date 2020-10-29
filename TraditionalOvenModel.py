@@ -16,7 +16,7 @@ bodies['fanshroud'] = Solid(290, 0.00006, steel, 0.001)
 bodies['ovenback'] = Solid(290, 0.00012, steel, 0.001)
 bodies['ovenbackinsulation'] = Solid(290, 0.0024, rockwool, 0.02)
 bodies['ovenbackouter'] = Solid(290, 0.00012, steel, 0.001)
-bodies['food'] = Solid(277, 0.0036, chicken, 0.05)
+bodies['food'] = Solid(277, 0.0036, chicken, 0.04)
 bodies['ovenwalls'] = Solid(290, 0.00072, steel, 0.001)
 bodies['oveninsulation'] = Solid(290, 0.0144, rockwool, 0.02)
 bodies['ovenouter'] = Solid(290, 0.00072, steel, 0.001)
@@ -81,7 +81,7 @@ for body in bodies:
     plt.plot(results["time"],results[body],label=body)
 
 results_df = pd.DataFrame(results)
-results_df.to_csv(savename+".csv")
+results_df.to_csv(r"Results//"+savename+".csv")
 
 plt.legend()
 plt.show()
