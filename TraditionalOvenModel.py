@@ -16,7 +16,11 @@ bodies['fanshroud'] = Solid(290, 0.00006, steel, 0.001)
 bodies['ovenback'] = Solid(290, 0.00012, steel, 0.001)
 bodies['ovenbackinsulation'] = Solid(290, 0.0024, rockwool, 0.02)
 bodies['ovenbackouter'] = Solid(290, 0.00012, steel, 0.001)
-bodies['food'] = Solid(277, 0.0036, chicken, 0.04)
+
+#bodies['food'] = Solid(277, 0.0036, chicken, 0.04) # chicken
+bodies['food'] = Solid(277, 0.00071, chicken, 0.005) # pizza
+
+
 bodies['ovenwalls'] = Solid(290, 0.00072, steel, 0.001)
 bodies['oveninsulation'] = Solid(290, 0.0144, rockwool, 0.02)
 bodies['ovenouter'] = Solid(290, 0.00072, steel, 0.001)
@@ -48,7 +52,7 @@ step_time = 0.1
 steps = 90000
 step_count = 0
 setpoint = 180+273
-foodtarget = 74+273
+foodtarget = 100+273
 power = 2400 #Watts
 savename = "Traditional Oven Chicken"
 results = {}
