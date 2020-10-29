@@ -1,3 +1,5 @@
+''' Library containing functions and information to run an oven simulation'''
+
 import matplotlib.pyplot as plt
 import numpy as np
 
