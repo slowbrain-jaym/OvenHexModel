@@ -33,10 +33,10 @@ class Solid(Body):
 class Gas(Body):   
     def __init__(self, T0, volume, mat, htc, debug=False):
         Body.__init__(self, T0, volume, mat, debug)
-        self.body_htc = htc
+        self.htc_num = htc
 
     def htc(self):
-        return self.body_htc
+        return self.htc_num
         ''' Using corrleations - switched to fixed values taken from Carson et al 2006
         re = self.mat.density(self.temp)*self.velo*self.length/(self.mat.viscosity(self.temp))
         pr = self.mat.prandtl(self.temp)
