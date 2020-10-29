@@ -31,13 +31,12 @@ class Solid(Body):
         return 2.0*self.mat.thermal_cond(self.temp)/self.thickness
 
 class Gas(Body):   
-    def __init__(self, T0, volume, mat, velo, length, debug=False):
+    def __init__(self, T0, volume, mat, htc, debug=False):
         Body.__init__(self, T0, volume, mat, debug)
-        self.velo = velo
-        self.length = length
+        self.body_htc = htc
 
     def htc(self):
-        return 25
+        return self.body_htc
         ''' Using corrleations - switched to fixed values taken from Carson et al 2006
         re = self.mat.density(self.temp)*self.velo*self.length/(self.mat.viscosity(self.temp))
         pr = self.mat.prandtl(self.temp)
@@ -162,6 +161,22 @@ class Hipor(object):
     
     def density(self, temp):
         return 1000
+
+class Chicken(object):
+    def viscosity(self, temp):
+        return False
+    
+    def heat_capacity(self, temp):
+        return 4200
+
+    def thermal_cond(self, temp):
+        return 0.6
+
+    def prandtl(self, temp):
+        return False
+    
+    def density(self, temp):
+        return 1000       
 
 class Door(object):
     def viscosity(self, temp):
