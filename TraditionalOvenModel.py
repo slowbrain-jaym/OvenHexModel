@@ -48,7 +48,7 @@ exchangers.append(HeatExchange(bodies['ovenbackouter'], bodies['outsideairback']
 exchangers.append(HeatExchange(bodies['ovendoor'], bodies['outsideair'], 0.2))
 
 
-step_time = 0.1
+step_time = 0.01
 steps = 90000
 step_count = 0
 setpoint = 180+273
